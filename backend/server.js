@@ -24,6 +24,10 @@ mongoose.connect(process.env.MONGO_URI)
     console.error('MongoDB connection error:', err);
 });
 
+app.get('/', (req, res) => {
+    res.send("Welcomw to backend");
+})
+
 app.post('/submit', async (req, res) => {
     const { name, email, password } = req.body;
     try {
